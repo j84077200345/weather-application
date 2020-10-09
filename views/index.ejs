@@ -1,0 +1,136 @@
+<% extend('./layout/navbar') %>
+
+    <div class="container mt-5">
+
+
+      <!--Section: Content-->
+      <section class="">
+    
+        <!-- Section heading -->
+        <h2 class="text-center font-weight-bold mb-5">最新天氣資訊</h2>
+        <h4 class="text-center font-weight-bold mb-6">更新時間 : <%= taipei.time %></h4>
+        <!-- Grid row -->
+        <div class="row text-center">
+    
+          <!-- Grid column -->
+          <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+    
+            <!-- Card -->
+            <div class="card">
+
+              <!-- Card image -->
+              <div class="view overlay">
+                <img class="card-img-top" src="/images/taipei.jpg"
+                  alt="Card image cap">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body">
+
+                <!-- Title -->
+                <h3 class="card-title">臺北市</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">平均氣溫 : <%= taipei.avg_temp %> ℃</li>
+                  <li class="list-group-item">最高溫 : <%= taipei.max_temp %> ℃</li>
+                  <li class="list-group-item">最低溫 : <%= taipei.min_temp %> ℃</li>
+                  <li class="list-group-item">平均濕度 : <%= taipei.avg_humd %> %</li>
+                  <li class="list-group-item">平均風速 : <%= taipei.avg_wdsd %> 公尺/秒</li>
+                </ul>
+                <!-- Button -->
+                <a  href="/taipei" class="btn btn-primary">詳細資料</a>
+
+              </div>
+
+            </div>
+            <!-- Card -->
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+    
+            <!-- Card -->
+            <div class="card">
+
+              <!-- Card image -->
+              <div class="view overlay">
+                <img class="card-img-top" src="/images/new_taipei.jpg"
+                  alt="Card image cap">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body">
+
+                <!-- Title -->
+                <h3 class="card-title">新北市</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">平均氣溫 : <%= new_taipei.avg_temp %> ℃</li>
+                  <li class="list-group-item">最高溫 : <%= new_taipei.max_temp %> ℃</li>
+                  <li class="list-group-item">最低溫 : <%= new_taipei.min_temp %> ℃</li>
+                  <li class="list-group-item">平均濕度 : <%= new_taipei.avg_humd %> %</li>
+                  <li class="list-group-item">平均風速 : <%= new_taipei.avg_wdsd %> 公尺/秒</li>
+                </ul>
+                <!-- Button -->
+                <a href="/new_taipei" class="btn btn-primary">詳細資料</a>
+                
+              </div>
+
+            </div>
+            <!-- Card -->
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-lg-4 col-md-6 mb-0">
+    
+            <!-- Card -->
+            <div class="card">
+
+              <!-- Card image -->
+              <div class="view overlay">
+                <img class="card-img-top" src="/images/taoyuan.jpg"
+                  alt="Card image cap">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <!-- Card content -->
+              <div class="card-body">
+
+                <!-- Title -->
+                <h3 class="card-title">桃園市</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">平均氣溫 : <%= taoyuan.avg_temp %> ℃</li>
+                  <li class="list-group-item">最高溫 : <%= taoyuan.max_temp %> ℃</li>
+                  <li class="list-group-item">最低溫 : <%= taoyuan.min_temp %> ℃</li>
+                  <li class="list-group-item">平均濕度 : <%= taoyuan.avg_humd %> %</li>
+                  <li class="list-group-item">平均風速 : <%= taoyuan.avg_wdsd %> 公尺/秒</li>
+                </ul>
+                <!-- Button -->
+                <a href="/taoyuan" class="btn btn-primary">詳細資料</a>
+                
+              </div>
+
+            </div>
+            <!-- Card -->
+    
+          </div>
+          <!-- Grid column -->
+    
+        </div>
+        <!-- Grid row -->
+            
+      </section>
+      <!--Section: Content-->
+    
+    
+    </div>

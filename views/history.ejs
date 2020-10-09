@@ -1,0 +1,47 @@
+<% extend('./layout/navbar') %>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<div class="container mt-5">
+    <% if(location == 'taipei'){ %>
+        <h2 class="text-center font-weight-bold mb-5">臺北市天氣歷史資訊</h2>
+    <% }else if(location == 'new_taipei'){ %>
+        <h2 class="text-center font-weight-bold mb-5">新北市天氣歷史資訊</h2>
+    <% }else{ %>
+        <h2 class="text-center font-weight-bold mb-5">桃園市天氣歷史資訊</h2>
+    <% } %>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">平均氣溫</th>
+            <th scope="col">最高溫</th>
+            <th scope="col">最低溫</th>
+            <th scope="col">平均濕度</th>
+            <th scope="col">平均風速</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var item in data){ %>
+            <tr>
+                <th scope="row"><%= item %></th>
+                <td><%= data[item].avg_temp %> ℃</td>
+                <td><%= data[item].max_temp %> ℃</td>
+                <td><%= data[item].min_temp %> ℃</td>
+                <td><%= data[item].avg_humd %> %</td>
+                <td><%= data[item].avg_wdsd %> 公尺/秒</td>
+            </tr>
+          <% } %>
+        </tbody>
+    </table>
+    
+    <div id="temp_plot" style="width:100%;height:250px; margin-top: 10%;"></div>
+
+    <script>
+        temp_plot = document.getElementById('temp_plot');
+        Plotly.newPlot( temp_plot, [{
+        x: "<%= plot_time %>".split(','),
+        y: "<%= plot_temp %>".split(',') }], {
+        margin: { t: 0 } } );
+    </script>
+</div>
