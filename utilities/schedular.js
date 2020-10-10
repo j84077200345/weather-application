@@ -4,8 +4,8 @@ var weather_api = require('../utilities/weather_api');
 var cron = require('node-cron');
 
 var schedular_task = () => {
-    cron.schedule('* * * * *', () => {
-        console.log("latest weather data stored in firebase every minute.");
+    cron.schedule('15 * * * *', () => {
+        console.log("latest weather data stored in firebase every hour.");
         var options = {
           'method': 'GET',
           'url': 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=CWB-BE9C772C-80C8-4293-8795-7ED7DCD144EB&parameterName%EF%BC%8C=CITY\n',
