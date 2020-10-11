@@ -12,4 +12,4 @@
 2. 執行```npm install```安裝相關套件。
 3. 在專案根目錄建立一個.env檔案，加入firebase資料庫的相關環境變數。
 
-平台DEMO : [即時天氣查詢APP](http://ec2-35-172-194-119.compute-1.amazonaws.com/taipei)
+平台DEMO : [即時天氣查詢APP](http://ec2-35-172-194-119.compute-1.amazonaws.com)
