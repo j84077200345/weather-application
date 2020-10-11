@@ -1,6 +1,11 @@
 <% extend('./layout/navbar') %>
 
+<!-- MDBootstrap Datatables  -->
+<link href="/stylesheets/datatables2.min.css" rel="stylesheet">
+<!-- MDBootstrap Datatables  -->
+<script type="text/javascript" src="/javascripts/datatables2.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 
 <div class="container mt-5">
     <% if(location == 'taipei'){ %>
@@ -10,32 +15,46 @@
     <% }else{ %>
         <h2 class="text-center font-weight-bold mb-5">桃園市天氣歷史資訊</h2>
     <% } %>
-    <table class="table table-hover">
-        <thead>
+
+    <table id="weather_table" class="table" width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">時間
+          </th>
+          <th class="th-sm">平均氣溫
+          </th>
+          <th class="th-sm">最高溫
+          </th>
+          <th class="th-sm">最低溫
+          </th>
+          <th class="th-sm">平均濕度
+          </th>
+          <th class="th-sm">平均風速
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var item in data){ %>
           <tr>
-            <th scope="col"></th>
-            <th scope="col">平均氣溫</th>
-            <th scope="col">最高溫</th>
-            <th scope="col">最低溫</th>
-            <th scope="col">平均濕度</th>
-            <th scope="col">平均風速</th>
+            <th scope="row"><%= item %></th>
+            <td><%= data[item].avg_temp %> ℃</td>
+            <td><%= data[item].max_temp %> ℃</td>
+            <td><%= data[item].min_temp %> ℃</td>
+            <td><%= data[item].avg_humd %> %</td>
+            <td><%= data[item].avg_wdsd %> 公尺/秒</td>
           </tr>
-        </thead>
-        <tbody>
-          <% for(var item in data){ %>
-            <tr>
-                <th scope="row"><%= item %></th>
-                <td><%= data[item].avg_temp %> ℃</td>
-                <td><%= data[item].max_temp %> ℃</td>
-                <td><%= data[item].min_temp %> ℃</td>
-                <td><%= data[item].avg_humd %> %</td>
-                <td><%= data[item].avg_wdsd %> 公尺/秒</td>
-            </tr>
-          <% } %>
-        </tbody>
+        <% } %>
+      </tbody>
     </table>
     
-    <div id="temp_plot" style="width:100%;height:250px; margin-top: 10%;"></div>
+    <script>
+      $(document).ready(function () {
+        $('#weather_table').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+      });
+    </script>
+
+    <div id="temp_plot" style="width:100%;height:250px;"></div>
 
     <script>
         temp_plot = document.getElementById('temp_plot');
