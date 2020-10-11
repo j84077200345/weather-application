@@ -1,6 +1,6 @@
 ## 天氣查詢APP
 
-#### 技術介紹 : 
+### 技術介紹 : 
 - 前端CSS框架 : Bootstrap
 - 後端框架 : Nodejs Express
 - 資料庫 : Firebase Realtime Database
